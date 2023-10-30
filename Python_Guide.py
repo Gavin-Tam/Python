@@ -135,33 +135,3 @@ print(gavinfile.read())
 
 gavinfile.close()
 print("----------------------------------------------------") 
-#Student Class 
-from Student import Student 
-#Object of a student class, creates a student. 
-student1 = Student("Gavin", "Software Engineering", 3.1, False)
-print(student1)
-print(student1.name)
-print("----------------------------------------------------") 
-from Question import Question
-
-questions_prompt = [
-    "What color are apples?\n(a) Red/Green\n(b) Purple\n(c) Orange\n\n",
-    "What color are Bananas? \n(a) Teal\n(b) Magenta\n(c) Yellow\n\n",
-    "What color are strawberries?\n(a) Yellow\n(b) Red\n(c) Blue\n\n"
-]
-
-questions = [
-    Question(questions_prompt[0], "a"),
-    Question(questions_prompt[1], "c"),
-    Question(questions_prompt[2], "b")
-]
-
-def run_test(questions):
-    score = 0
-    for question in questions:
-        answer = input(question.prompt)
-        if answer.lower() == question.answer:  # Convert the answer to lowercase for case-insensitive comparison
-            score += 1
-    print("You got " + str(score) + "/" + str(len(questions)) + " correct")
-
-run_test(questions)
